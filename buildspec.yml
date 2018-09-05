@@ -1,0 +1,12 @@
+version: 0.0
+os: linux
+
+hooks:
+  BeforeInstall:
+    - location: scripts/docker_build.sh
+      timeout: 300
+      runas: root
+    - location: scripts/init.sh
+      timeout: 300
+      runas: root
+runas: root
