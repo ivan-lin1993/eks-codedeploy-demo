@@ -4,7 +4,7 @@ os: linux
 phases:
   install:
     commands:
-      - ./eksctl_init.sh
+      - ./script/eksctl_init.sh
   build:
     commands:
       - ./script/docker_build.sh
