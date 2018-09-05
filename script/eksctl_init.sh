@@ -8,3 +8,5 @@ mv /tmp/eksctl /usr/bin
 
 CLUSTER_NAME=workshop
 eksctl utils write-kubeconfig --name $CLUSTER_NAME
+
+kubectl get pods
