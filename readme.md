@@ -3,12 +3,15 @@
 1. Create cluster
     - eksctl create cluster --name {{name}}
     ```
-    $ eksctl create cluster -N 1 -t t2.nano --name workshop
+    $ eksctl create cluster -N 1 -t t2.small --name workshop
     ```
 2. Setting codebuild role
-    - eks
-    - cloudformation
-3. Config config.json
+    - eks full access
+    - cloudformation full access
+3. Setting cluster auth
+    - kubectl edit -n kube-system configmap/aws-auth
+4. create codebuild project
+
 
 
 
