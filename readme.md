@@ -17,8 +17,6 @@
 
 
 
-
-
 https://stackoverflow.com/questions/50791303/kubectl-error-you-must-be-logged-in-to-the-server-unauthorized-when-accessing
 
 要設定codebuild的role有
