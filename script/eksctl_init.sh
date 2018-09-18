@@ -9,6 +9,7 @@ aws-iam-authenticator help
 
 eksctl utils write-kubeconfig --name $CLUSTER_NAME
 
+cat ~/.kube/config
 # echo "Setting kubectl Auth"
 # curl -O https://amazon-eks.s3-us-west-2.amazonaws.com/1.10.3/2018-07-26/aws-auth-cm.yaml
 # CODEBUILD_ROLE_ARN_TEMP=$(echo $ROLE_ARN_CODEBUILD | sed 's/\//\\\//')

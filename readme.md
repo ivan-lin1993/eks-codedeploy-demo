@@ -3,7 +3,7 @@
 1. Create cluster
     - eksctl create cluster --name {{name}}
     ```
-    $ eksctl create cluster -N 1 -t t2.small --name workshop
+    $ eksctl create cluster -N 2 -t t2.small --name workshop
     ```
 2. Setting codebuild role
     - eks full access
