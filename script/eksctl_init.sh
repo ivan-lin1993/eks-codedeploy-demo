@@ -5,6 +5,8 @@ curl -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.10
 curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
 mv /tmp/eksctl /usr/bin
 
+aws-iam-authenticator help
+
 eksctl utils write-kubeconfig --name $CLUSTER_NAME
 
 # echo "Setting kubectl Auth"
