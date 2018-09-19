@@ -15,7 +15,7 @@ spec:
       containers:
       - name: eks-web # container name
         image: 091393925708.dkr.ecr.us-west-2.amazonaws.com/eks-workshop:latest
-        imagePullPolicy: IfNotPresent # if exists, will not pull new image
+        imagePullPolicy: Always # if exists, will not pull new image
         ports: # container and host port assignments
         - containerPort: 80
         - containerPort: 443
