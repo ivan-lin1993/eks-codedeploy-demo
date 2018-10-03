@@ -13,4 +13,4 @@ phases:
     command:
       - ./script/upload_to_ecr.sh
     finally:
-      - ./script/deploy_to_eks.sh
+      - ./script/invoke_lambda.sh
