@@ -10,7 +10,7 @@ phases:
     commands:
       - sh script/docker_build.sh
   post_build:
-    command:
+    commands:
       - sh script/upload_to_ecr.sh
     finally:
       - echo 'Done'
