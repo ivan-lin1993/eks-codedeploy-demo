@@ -4,7 +4,7 @@ os: linux
 phases:
   install:
     commands:
-      - ./script/test.sh
+      - sh test.sh
       - ./script/init.sh
       - ./script/eksctl_init.sh
   build:
