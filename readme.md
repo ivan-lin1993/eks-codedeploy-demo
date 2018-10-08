@@ -7,7 +7,9 @@
     ```
 2. Setting codebuild role (create your own)
     - eks full access
-    - cloudformation full access
+    - cloudformation read only
+    - s3 full access
+    - lambda invoke
 3. Setting cluster auth
     - kubectl edit -n kube-system configmap/aws-auth
 
@@ -20,7 +22,7 @@
           - system:nodes
           rolearn: arn:aws:iam::<ACCOUNTID>:role/EKS-workshop-DefaultNodeGroup-NodeInstanceRole-L38WNL4K7D4T
           username: system:node:{{EC2PrivateDNSName}}
-        - rolearn: arn:aws:iam::<ACCOUNTID>:role/eks-codebuild-test
+        - rolearn: <CODEBUILD ARN>
           username: ekscodebuild
           groups:
           - system:masters
