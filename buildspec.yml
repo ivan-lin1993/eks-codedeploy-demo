@@ -13,4 +13,4 @@ phases:
     command:
       - ./script/upload_to_ecr.sh
     finally:
-      - ./script/invoke_lambda.sh
+      - echo 'Done'
