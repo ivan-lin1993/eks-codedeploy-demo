@@ -4,13 +4,13 @@ os: linux
 phases:
   install:
     commands:
-      - ./script/init.sh
-      - ./script/eksctl_init.sh
+      - sh script/init.sh
+      - sh script/eksctl_init.sh
   build:
     commands:
-      - ./script/docker_build.sh
+      - sh script/docker_build.sh
   post_build:
-    command:
-      - ./script/upload_to_ecr.sh
+    commands:
+      - sh script/upload_to_ecr.sh
     finally:
       - echo 'Done'

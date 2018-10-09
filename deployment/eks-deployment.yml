@@ -15,6 +15,7 @@ spec:
       containers:
       - name: eks-web # container name
         image: 091393925708.dkr.ecr.us-west-2.amazonaws.com/eks-workshop:latest
+        imagePullPolicy: Always
         ports: # container and host port assignments
         - containerPort: 80
         - containerPort: 443
