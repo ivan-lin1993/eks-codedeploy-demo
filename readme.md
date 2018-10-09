@@ -1,5 +1,11 @@
 # AWS Code Pipeline with EKS
 
+## What
+Use AWS Code Pipeline to do the CICD on AWS EKS.\
+The resource update will trigger AWS Codebuild to build a docker image and upload to AWS ECR. And then use AWS Lambda to deploy your image to your EKS Cluster
+
+## Usage
+
 1. Create EKS cluster
     - eksctl create cluster --name {{cluster name}}
     ```
@@ -27,7 +33,7 @@
 1. Create Lambda Function
     - Attach Role
     - python version 3.6
-    - [Code]('https://github.com/ivan-lin1993/k8s-lambda-deploy')
+    - [Code](https://github.com/ivan-lin1993/k8s-lambda-deploy)
     - Setting ENV
         - CLUSTER_NAME
         - API_ENDPOINT : EKS api endpoint
