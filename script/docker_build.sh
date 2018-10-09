@@ -1,2 +1,2 @@
 #!/bin/sh
-docker build -t eks-web ./app
+docker build -t $ECR_URI ./app

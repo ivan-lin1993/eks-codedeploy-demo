@@ -1,18 +1,44 @@
-# eksctl
+# AWS Code Pipeline with EKS
 
-1. Create cluster
-    - eksctl create cluster --name {{name}}
+1. Create EKS cluster
+    - eksctl create cluster --name {{cluster name}}
     ```
     $ eksctl create cluster -N 2 -t t2.small --name workshop
     ```
-2. Setting codebuild role (create your own)
-    - eks full access
-    - cloudformation read only
-    - s3 full access
-    - lambda invoke
-3. Setting cluster auth
-    - kubectl edit -n kube-system configmap/aws-auth
+1. Create ECR repository
 
+1. Create Codebuild role
+    - S3 full access
+    - ECR full access
+    - CloudFormation read only
+
+1. Create Lambda Role
+    - S3 full access
+    - EKS full access
+
+1. Create CodeBuild project and attach the role we created
+    - Setting Codebuild ENV
+      - CLUSTER_NAME ( workshop )
+      - S3_BUCKET ( your s3 bucket name )
+      - DEPLOYFILE_NAME ( ex: eks-deployment.yml )
+      - ECR_URI  ( the repository uri )
+      - REGION ( us-west-2 )
+
+1. Create Lambda Function
+    - Attach Role
+    - python version 3.6
+    - [Code]('https://github.com/ivan-lin1993/k8s-lambda-deploy')
+    - Setting ENV
+        - CLUSTER_NAME
+        - API_ENDPOINT : EKS api endpoint
+        - DEPLOYFILE_NAME  ( ex: eks-deployment.yml )
+        - S3_BUCKET
+
+1. Setting cluster auth    
+    You have to add lambda role to permission to do the deploy
+    ```
+      $ kubectl edit -n kube-system configmap/aws-auth
+    ```
     ```
     apiVersion: v1
     data:
@@ -22,12 +48,8 @@
           - system:nodes
           rolearn: arn:aws:iam::<ACCOUNTID>:role/EKS-workshop-DefaultNodeGroup-NodeInstanceRole-L38WNL4K7D4T
           username: system:node:{{EC2PrivateDNSName}}
-        - rolearn: <CODEBUILD ARN>
-          username: ekscodebuild
-          groups:
-          - system:masters
-        - rolearn: arn:aws:iam::<ACCOUNTID>:role/eks-work-shop-simulator
-          username: system:node:{{EC2PrivateDNSName}}
+        - rolearn: <LAMBDA ARN>
+          username: lambda_deploy
           groups:
           - system:masters
     kind: ConfigMap
@@ -39,12 +61,13 @@
       selfLink: /api/v1/namespaces/kube-system/configmaps/aws-auth
       uid: 4cfb11eb-bae8-11e8-a13f-06a8e498af66
     ```
-4. create codebuild project
+
+1. Setting Code Pipeline
+
+1. Have Fun
 
 
-
-
-
+<hr>
 
 https://stackoverflow.com/questions/50791303/kubectl-error-you-must-be-logged-in-to-the-server-unauthorized-when-accessing
 
