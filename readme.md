@@ -4,6 +4,13 @@
 Use AWS Code Pipeline to do the CICD on AWS EKS.\
 The resource update will trigger AWS Codebuild to build a docker image and upload to AWS ECR. And then use AWS Lambda to deploy your image to your EKS Cluster
 
+
+## You will need....
+1. docker
+1. eksctl
+1. kubectl
+
+
 ## Usage
 
 1. Create EKS cluster
@@ -75,9 +82,26 @@ The resource update will trigger AWS Codebuild to build a docker image and uploa
       uid: 4cfb11eb-bae8-11e8-a13f-06a8e498af66
     ```
 
+1. Apply your first deployment
+    ```
+    $ docker build -t <ECR URI> ./app
+    $ $(aws ecr get-login --no-include-email --region <REGION>)
+    $ docker push <ECR URI>:latest
+    $ vim ./deployment/eks-deployment.yml
+    ```
+    edit image name
+    ```
+    $ kubectl apply -f ./deployment/eks-deployment.yml
+    $ kubectl apply -f ./deployment/loadbalancer.yml
+    $ kubectl describe svc/eks-demo-elb
+    ## get elb url
+    ```
+
+1. Update the namecard
+
 1. Setting Code Pipeline
 
-1. Have Fun
+1. Enjoy the CICD
 
 
 <hr>
