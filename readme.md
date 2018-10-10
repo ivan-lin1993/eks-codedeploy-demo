@@ -30,6 +30,7 @@ The resource update will trigger AWS Codebuild to build a docker image and uploa
 1. Create Lambda Role
     - S3 full access
     - EKS full access
+    - Pipeline full access (PutJobResult)
 
 1. Create CodeBuild project and attach the role we created
     - Setting Environment image
