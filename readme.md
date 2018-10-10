@@ -98,7 +98,10 @@ The resource update will trigger AWS Codebuild to build a docker image and uploa
     ## get elb url
     ```
 
-1. Update the namecard
+1. Update app
+    - update namecard
+    - edit ./script/init.sh VERSION
+    - git update
 
 1. Setting Code Pipeline
 
