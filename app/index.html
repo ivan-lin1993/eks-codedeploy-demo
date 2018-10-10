@@ -1,3 +1,82 @@
-<html>
-    <h1>Hello world version latest 3</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Name Card</title>
+</head>
+<style>
+*{
+  font-family:微軟正黑體;
+  position: relative;
+  letter-spacing: 1.5px;
+/*   border:solid 1px black; */
+}
+html body{
+  width:100%;
+  padding:0px;margin:0px;
+  background-color:#D8E2DC;
+  overflow:hidden;
+}
+.n_mark{
+  font-size:300px;
+  position:absolute;
+  letter-spacing:130px;
+  margin-top:-70px;
+  color:rgba(0,0,0,0.05);
+}
+.namecard{
+  display:block-inline;
+  border:solid 1px rgba(0,0,0,0.1);  
+  border-radius: 10px;
+  width: 350px;
+  padding:20px;
+  padding-top:30px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px;
+  background-color: #FFFFFF;
+  box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.2);
+  transition: .3s;
+  cursor: pointer;
+}
+.namecard:hover{
+  box-shadow: 20px 20px 8px -8px rgba(0,0,0,0.2);
+  transition: .5s;
+}
+
+.namecard h2{
+  color: #8DA1B9;
+  display: inline;
+  font-size: 30px;
+  font-weight: bold;
+}
+.namecard h2 span{
+  display: inline;
+  font-size: 15px;
+}
+.namecard .my_title{
+  padding-top: 8px;
+  font-size: 16px;
+  font-weight:bold;
+  font-style: italic;
+  color:#EF959C;
+}
+.namecard p{
+  color: #95ADB6;
+  line-height: 1.6;
+}
+
+</style>
+<body>
+    <div class="namecard">
+        <h2>Ivan Lin<span></span></h2>
+        
+        <div class="my_title">Programmer also an Adventurer</div>
+        <hr>
+        <p>&nbsp;&nbsp; &nbsp; &nbsp; I love mountain climbing, travelling ,playing music, and programming.
+        <br><br></p>
+      </div>
+</body>
 </html>

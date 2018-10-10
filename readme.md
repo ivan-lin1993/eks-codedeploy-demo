@@ -17,18 +17,25 @@ The resource update will trigger AWS Codebuild to build a docker image and uploa
     - S3 full access
     - ECR full access
     - CloudFormation read only
+    - CloudWatch read write
+    - EKS full access
 
 1. Create Lambda Role
     - S3 full access
     - EKS full access
 
 1. Create CodeBuild project and attach the role we created
+    - Setting Environment image
+        - Use an image managed by AWS CodeBuild
+        - OS: Ubuntu
+        - Runtime: Docker
+        - Build specification: buildspec.yml
     - Setting Codebuild ENV
-      - CLUSTER_NAME ( workshop )
-      - S3_BUCKET ( your s3 bucket name )
-      - DEPLOYFILE_NAME ( ex: eks-deployment.yml )
-      - ECR_URI  ( the repository uri )
-      - REGION ( us-west-2 )
+        - CLUSTER_NAME ( workshop )
+        - S3_BUCKET ( your s3 bucket name )
+        - DEPLOYFILE_NAME ( ex: eks-deployment.yml )
+        - ECR_URI  ( the repository uri )
+        - REGION ( us-west-2 )
 
 1. Create Lambda Function
     - Attach Role

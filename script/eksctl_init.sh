@@ -9,4 +9,4 @@ aws-iam-authenticator help
 
 eksctl utils write-kubeconfig --name $CLUSTER_NAME --kubeconfig /tmp/kubeconfig
 aws s3 cp /tmp/kubeconfig s3://$S3_BUCKET/$CLUSTER_NAME/
-aws s3 cp ./deployment/$DEPLOYFILE s3://$S3_BUCKET/$CLUSTER_NAME/
+aws s3 cp ./deployment/$DEPLOYFILE_NAME s3://$S3_BUCKET/$CLUSTER_NAME/
