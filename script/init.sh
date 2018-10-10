@@ -3,4 +3,5 @@ echo "Download the dependency......"
 apt update
 apt install -y curl wget jq
 
-export VERSION=v1
+export IMAGE_VERSION=v1
+echo "NOW $IMAGE_VERSION"

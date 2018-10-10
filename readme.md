@@ -100,7 +100,7 @@ The resource update will trigger AWS Codebuild to build a docker image and uploa
 
 1. Update app
     - update namecard
-    - edit ./script/init.sh VERSION
+    - edit ./script/init.sh $IMAGE_VERSION
     - git update
 
 1. Setting Code Pipeline
