@@ -1,5 +1,6 @@
 #!/bin/sh
-export IMAGE_VERSION=v1
+export IMAGE_VERSION=v2
+
 echo "NOW $IMAGE_VERSION"
 
 echo "Docker Build"
