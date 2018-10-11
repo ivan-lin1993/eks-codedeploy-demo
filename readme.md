@@ -12,6 +12,7 @@ The resource update will trigger AWS Codebuild to build a docker image and uploa
 
 
 ## Usage
+1. Clone this project to your own github or codecommit
 
 1. Create EKS cluster
     - eksctl create cluster --name {{cluster name}}
