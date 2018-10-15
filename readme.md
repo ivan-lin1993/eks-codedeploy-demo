@@ -57,7 +57,7 @@ The resource update will trigger AWS Codebuild to build a docker image and uploa
         - S3_BUCKET
 
 1. Setting cluster auth    
-    You have to add lambda role to permission to do the deploy
+    You have to add lambda role permission to do the deploy
     ```
       $ kubectl edit -n kube-system configmap/aws-auth
     ```
