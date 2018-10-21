@@ -107,9 +107,14 @@ The resource update will trigger AWS Codebuild to build a docker image and uploa
     
 
 1. Setting Code Pipeline
+    - Source
+    - CodeBuild
+    - Invoke the Lambda
 
 1. Enjoy the CICD
 
+## Contributor
+- [KYPan]('https://github.com/KYPan0818')
 
 <hr>
 
