@@ -114,7 +114,7 @@ The resource update will trigger AWS Codebuild to build a docker image and uploa
 1. Enjoy the CICD
 
 ## Contributor
-- [KYPan]('https://github.com/KYPan0818')
+- [KYPan](https://github.com/KYPan0818)
 
 <hr>
 
